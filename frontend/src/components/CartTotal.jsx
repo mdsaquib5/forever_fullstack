@@ -8,7 +8,7 @@ const CartTotal = () => {
     <>
         <div className='w-full'>
             <div className='text-2xl'>
-                <Title text1="YOUR" text2="TOTALS" />
+                <Title text="Your Total" />
             </div>
             <div className='flex flex-col gap-2 mt-2 text-sm'>
                 <div className="flex justify-between">

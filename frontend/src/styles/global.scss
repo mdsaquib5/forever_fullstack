@@ -1,0 +1,18 @@
+// Custom SCSS variables
+$primary-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+$secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+// Newsletter form - simpler CSS
+.newsletter-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem 0 0 0.5rem;
+  outline: none;
+  transition: all 0.3s;
+  
+  &:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+  }
+}
