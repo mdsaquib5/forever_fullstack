@@ -47,5 +47,5 @@ app.use("/api/order", orderRouter);
 
 //  start the express server
 app.listen(port, () => {
-    console.log(`Server is Running on Port http://localhost:/${port}`);
+    console.log(`Server is Running on Port http://localhost:${port}`);
 });
