@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Phone,
     Mail,
@@ -115,7 +115,7 @@ const Footer = () => {
                                 <ul className="space-y-3">
                                     {['My Account', 'Order Tracking', 'Wishlist', 'Returns & Exchanges', 'Shipping Rates', 'Contact Support', 'Size Chart', 'Gift Cards'].map((item, index) => (
                                         <li key={index}>
-                                            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
+                                            <a href="/collection" className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block">
                                                 {item}
                                             </a>
                                         </li>
@@ -168,10 +168,10 @@ const Footer = () => {
                 <div className="border-t border-gray-800 bg-gray-900">
                     <div className="container mx-auto px-4 py-6">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                            <p className="text-gray-400 text-sm text-center md:text-left">
+                            <p className="text-gray-400 text-sm text-center md:text-left z-10">
                                 © 2025 ForeverStyle. All rights reserved. Made with <Heart className="w-4 h-4 text-red-500 inline fill-current" /> by foreverstyle
                             </p>
-                            <div className="flex gap-6 text-sm text-gray-400">
+                            <div className="flex gap-6 text-sm text-gray-400 z-10">
                                 <Link to={'/'} className="hover:text-white transition-colors">Privacy Policy</Link>
                                 <Link to={'/'} className="hover:text-white transition-colors">Terms of Service</Link>
                                 <Link to={'/'} className="hover:text-white transition-colors">Cookies</Link>
