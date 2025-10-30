@@ -109,79 +109,17 @@ const Navbar = () => {
                                 <Search size={20} />
                             </button>
 
-                            {/* User Profile with Dropdown */}
-                            <div className='relative group'>
-                                <button
-                                    onClick={() => {
-                                        if (token) {
-                                            setIsUserMenuOpen(!isUserMenuOpen);
-                                        } else {
-                                            navigate('/login');
-                                        }
-                                    }}
-                                    className='p-2 text-gray-600 hover:text-red-600 transition-colors duration-300 hover:bg-gray-50 rounded-full'
-                                >
-                                    <User size={20} />
-                                </button>
-
-                                {/* Desktop Dropdown Menu */}
-                                {token && (
-                                    <div className='hidden lg:block absolute right-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0'>
-                                        <div className='bg-white shadow-xl rounded-2xl border border-gray-100 py-3 px-4 min-w-48'>
-                                            <div className='flex flex-col space-y-2'>
-                                                <button className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200'>
-                                                    My Profile
-                                                </button>
-                                                <button
-                                                    onClick={() => navigate('/orders')}
-                                                    className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200'
-                                                >
-                                                    Orders
-                                                </button>
-                                                <button
-                                                    onClick={logout}
-                                                    className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200'
-                                                >
-                                                    Logout
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Mobile Dropdown Menu */}
-                                {token && isUserMenuOpen && (
-                                    <div className='lg:hidden absolute right-0 top-full mt-2 bg-white shadow-xl rounded-2xl border border-gray-100 py-3 px-4 min-w-48 z-50'>
-                                        <div className='flex flex-col space-y-2'>
-                                            <button 
-                                                onClick={() => {
-                                                    navigate('/profile');
-                                                    setIsUserMenuOpen(false);
-                                                }}
-                                                className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200'
-                                            >
-                                                My Profile
-                                            </button>
-                                            <button
-                                                onClick={() => {
-                                                    navigate('/orders');
-                                                    setIsUserMenuOpen(false);
-                                                }}
-                                                className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200'
-                                            >
-                                                Orders
-                                            </button>
-                                            <button
-                                                onClick={logout}
-                                                className='text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200 flex items-center gap-2'
-                                            >
-                                                <LogOut size={16} />
-                                                Logout
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            {/* User Profile with Dropdown - Only show when NOT logged in */}
+                            {!token && (
+                                <div className='relative group'>
+                                    <button
+                                        onClick={() => navigate('/login')}
+                                        className='p-2 text-gray-600 hover:text-red-600 transition-colors duration-300 hover:bg-gray-50 rounded-full'
+                                    >
+                                        <User size={20} />
+                                    </button>
+                                </div>
+                            )}
 
                             {/* Shopping Cart */}
                             <Link
@@ -281,19 +219,9 @@ const Navbar = () => {
                                 </NavLink>
 
                                 {/* User Menu in Mobile Sidebar */}
-                                {token && (
+                                {token ? (
                                     <div className='border-t border-gray-100 pt-4 mt-4'>
                                         <div className='flex flex-col space-y-2'>
-                                            <button 
-                                                onClick={() => {
-                                                    navigate('/profile');
-                                                    setVisible(false);
-                                                }}
-                                                className='flex items-center justify-between p-4 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-all duration-300'
-                                            >
-                                                <span className='font-medium'>My Profile</span>
-                                                <ChevronRight size={16} className='text-gray-400' />
-                                            </button>
                                             <button
                                                 onClick={() => {
                                                     navigate('/orders');
@@ -312,6 +240,19 @@ const Navbar = () => {
                                                 <LogOut size={16} className='text-gray-400' />
                                             </button>
                                         </div>
+                                    </div>
+                                ) : (
+                                    <div className='border-t border-gray-100 pt-4 mt-4'>
+                                        <button
+                                            onClick={() => {
+                                                navigate('/login');
+                                                setVisible(false);
+                                            }}
+                                            className='flex items-center justify-between w-full p-4 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-red-600 transition-all duration-300'
+                                        >
+                                            <span className='font-medium'>Login</span>
+                                            <User size={16} className='text-gray-400' />
+                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -332,14 +273,6 @@ const Navbar = () => {
                 <div
                     className='fixed inset-0 backdrop-blur-xs z-40 lg:hidden'
                     onClick={() => setVisible(false)}
-                ></div>
-            )}
-
-            {/* Mobile User Menu Overlay */}
-            {isUserMenuOpen && (
-                <div
-                    className='fixed inset-0 z-30 lg:hidden'
-                    onClick={() => setIsUserMenuOpen(false)}
                 ></div>
             )}
         </>
