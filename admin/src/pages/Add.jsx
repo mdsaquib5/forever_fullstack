@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {assets} from '../assets/assets';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { backendUrl } from '../config/const';
 import { 
     Upload, 
     Package, 
@@ -54,7 +54,7 @@ const Add = ({token}) => {
             image4 && formData.append('image4', image4);
 
             // api call
-            const response = await axios.post('http://localhost:4000/api/product/add', formData, {
+            const response = await axios.post(`${backendUrl}/api/product/add`, formData, {
                 headers: {token}
             });
             toast.success('Product added successfully');

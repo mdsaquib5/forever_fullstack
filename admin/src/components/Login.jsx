@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-// import backendUrl from '../App';
+import { backendUrl } from '../config/const';
+
 import { 
     Lock, 
     User, 
@@ -24,7 +25,7 @@ const Login = ({setToken}) => {
         try {
             e.preventDefault();
             setIsLoading(true);
-            const response = await axios.post('http://localhost:4000/api/user/admin', {
+            const response = await axios.post(`${backendUrl}/api/user/admin`, {
                 email,
                 password
             });

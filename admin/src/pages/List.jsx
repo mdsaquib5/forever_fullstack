@@ -4,15 +4,14 @@ import { toast } from 'react-toastify';
 import {
     Package,
     Trash2,
-    Edit,
     Eye,
     Search,
     Filter,
     RefreshCw,
     AlertTriangle,
-    MoreVertical,
     Star
 } from 'lucide-react';
+import { backendUrl } from '../config/const';
 
 export const currency = "₹";
 
@@ -26,7 +25,7 @@ const List = ({ token }) => {
     const fetchList = async () => {
         try {
             setIsLoading(true);
-            const response = await axios.get('http://localhost:4000/api/product/list');
+            const response = await axios.get(`${backendUrl}/api/product/list`);
             //   console.log(response.data.products);
             if (response.data.success) {
                 setList(response.data.products);
@@ -50,7 +49,7 @@ const List = ({ token }) => {
     const removeProduct = async (id) => {
         console.log("Remove product id", id);
         try {
-            const response = await axios.post(`http://localhost:4000/api/product/remove`, { id }, { headers: { token } });
+            const response = await axios.post(`${backendUrl}/api/product/remove`, { id }, { headers: { token } });
             if (response.data.success) {
                 toast.success('Product deleted successfully');
                 // after delete the product from the list
