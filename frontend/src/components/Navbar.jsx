@@ -167,7 +167,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Sidebar Menu */}
-                <div className={`fixed top-0 right-0 w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-50 ${visible ? 'translate-x-0' : 'translate-x-full'
+                <div className={`fixed top-0 right-0 w-80 bg-white shadow-2xl transform transition-transform duration-500 ease-in-out z-50 ${visible ? 'translate-x-0' : 'translate-x-full hidden'
                     }`}>
                     <div className='flex flex-col h-svh'>
                         {/* Header */}

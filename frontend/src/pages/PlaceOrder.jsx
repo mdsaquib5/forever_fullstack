@@ -132,7 +132,8 @@ const PlaceOrder = () => {
             }
         } catch (error) {
             console.log(error);
-            toast.error(error.message);
+            toast.error("Unknown User! Please login first");
+            navigate('/login');
         } finally {
             setIsSubmitting(false);
         }
