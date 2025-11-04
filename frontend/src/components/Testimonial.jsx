@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Quote, ArrowLeft, ArrowRight, Heart } from 'lucide-react';
+import { Star, Quote, ArrowLeft, ArrowRight } from 'lucide-react';
 import Title from './Title';
 import Title2 from './Title2';
 

@@ -168,7 +168,7 @@ const Collection = () => {
                                 <div className="mb-8">
                                     <h4 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">CATEGORIES</h4>
                                     <div className="space-y-3">
-                                        {['Men', 'Women', 'Kids'].map((cat) => (
+                                        {['Casual', 'Sports', 'Sneaker'].map((cat) => (
                                             <label key={cat} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-300 cursor-pointer group">
                                                 <input
                                                     type="checkbox"
@@ -188,7 +188,7 @@ const Collection = () => {
                                 <div className="mb-6">
                                     <h4 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">PRODUCT TYPE</h4>
                                     <div className="space-y-3">
-                                        {['Topwear', 'Bottomwear', 'Winterwear'].map((type) => (
+                                        {['Mens', 'Women', 'Kids'].map((type) => (
                                             <label key={type} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-300 cursor-pointer group">
                                                 <input
                                                     type="checkbox"

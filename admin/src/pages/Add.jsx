@@ -89,7 +89,7 @@ const Add = ({token}) => {
         );
     };
 
-    const sizeOptions = ['S', 'M', 'L', 'XL', 'XXL'];
+    const sizeOptions = ['7', '8', '9', '11'];
 
   return (
     <>
@@ -228,9 +228,9 @@ const Add = ({token}) => {
                                 onChange={(e) => setCategory(e.target.value)}
                                 value={category}
                             >
-                                <option value="Men">Men</option>
-                                <option value="Women">Women</option>
-                                <option value="Kids">Kids</option>
+                                <option value="Men">Casual</option>
+                                <option value="Women">Sports</option>
+                                <option value="Kids">Sneaker</option>
                             </select>
                         </div>
 
@@ -244,9 +244,9 @@ const Add = ({token}) => {
                                 onChange={(e) => setSubCategory(e.target.value)}
                                 value={subCategory}
                             >
-                                <option value="Topwear">Topwear</option>
-                                <option value="Bottomwear">Bottomwear</option>
-                                <option value="Winterwear">Winterwear</option>
+                                <option value="Topwear">Mens</option>
+                                <option value="Bottomwear">Womens</option>
+                                <option value="Winterwear">Kids</option>
                             </select>
                         </div>
                     </div>
@@ -280,7 +280,7 @@ const Add = ({token}) => {
 
                     {/* Bestseller Toggle */}
                     <div className="mb-8">
-                        <label className="flex items-center gap-3 cursor-pointer group">
+                        <label className="flex items-center gap-3 cursor-pointer group w-fit">
                             <div className="relative">
                                 <input 
                                     type="checkbox" 

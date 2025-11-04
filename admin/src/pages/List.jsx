@@ -26,7 +26,7 @@ const List = ({ token }) => {
         try {
             setIsLoading(true);
             const response = await axios.get(`${backendUrl}/api/product/list`);
-            //   console.log(response.data.products);
+              console.log(response.data.products);
             if (response.data.success) {
                 setList(response.data.products);
             } else {
